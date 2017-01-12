@@ -1,0 +1,45 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Administration extends MX_Controller {
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('administration_model');
+    }
+
+
+    public function index()
+    {
+        
+         
+        $this->load->view('main_view');
+    }
+
+    public function login()
+    {
+        
+         
+        $this->load->view('login_view');
+    }
+
+     public function inscription()
+    {
+        
+         
+        $this->load->view('inscription_view');
+    }
+     
+     public function inscription_2()
+    {
+        
+         
+        $this->load->view('inscription_2');
+    }
+
+    
+
+}
+
+/* End of file accueil.php */
+/* Location: .//C/xampp/htdocs/annuaire.gouv/coeur/modules/accueil/controllers/accueil.php */ 
