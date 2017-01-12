@@ -72,7 +72,7 @@
         
                             <ul>
                                 <li><a href="tables.html">Simple Tables</a></li>
-                                <li><a href="data-tables.html">Data Tables</a></li>
+                                <li><a href="<?php echo base_url() ?>index.php/administration/attente_de_validation">Attente de validation</a></li>
                             </ul>
                         </li>
                         <li class="nav-item mm-col-2">

@@ -1,11 +1,11 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Administration extends MX_Controller {
+class Admin extends MX_Controller {
 
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('administration_model');
+        $this->load->model('admin_model');
     }
 
 
@@ -28,6 +28,13 @@ class Administration extends MX_Controller {
         
          
         $this->load->view('attente_de_validation_view');
+    }
+
+    public function entreprise_valide()
+    {
+        
+         
+        $this->load->view('entreprise_valider_view');
     }
      
      public function inscription_2()
