@@ -34,7 +34,7 @@
                                     <ul>
                                         <li><a href="<?php echo base_url() ?>index.php/admin/accordions.html">Accordions</a></li>
                                         <li><a href="<?php echo base_url() ?>index.php/admin/alerts-dialogs.html">Alerts & Dialogs</a></li>
-                                        <li><a href="<?php echo base_url() ?>index.php/admin/buttons.html">Buttons</a></li>
+                                        <li><a href="<?php echo base_url() ?>index.php/admin/button">Buttons</a></li>
                                         <li><a href="<?php echo base_url() ?>index.php/admin/breadcrumbs.html">Breadcrumbs</a></li>
                                         <li><a href="<?php echo base_url() ?>index.php/admin/colors.html">Colors</a></li>
                                         <li><a href="<?php echo base_url() ?>index.php/admin/dropdown.html">Dropdown</a></li>

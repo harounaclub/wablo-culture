@@ -54,6 +54,7 @@
                                                 <th data-column-id="mode" data-order="desc">Mode de paiement</th>
                                                 <th data-column-id="info" data-order="desc">Infos paiement</th>
                                                 <th data-column-id="telephone" data-order="desc">Telephone</th>
+                                                <th data-column-id="" data-order="">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -64,6 +65,7 @@
                                                 <td>14.10.2013</td>
                                                 <td>14.10.2013</td>
                                                 <td>14.10.2013</td>
+                                                <td><button class="btn btn-success waves-effect">Success</button></td>
                                             </tr>
                                             
                                         </tbody>

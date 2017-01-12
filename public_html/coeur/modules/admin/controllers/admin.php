@@ -44,6 +44,13 @@ class Admin extends MX_Controller {
         $this->load->view('inscription_2');
     }
 
+    public function button()
+    {
+        
+         
+        $this->load->view('buttons');
+    }
+
     
 
 }
