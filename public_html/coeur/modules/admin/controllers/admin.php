@@ -51,7 +51,12 @@ class Admin extends MX_Controller {
         $this->load->view('buttons');
     }
 
-    
+     public function configuration()
+    {
+        
+         
+        $this->load->view('configuration_view');
+    }
 
 }
 
