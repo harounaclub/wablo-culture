@@ -16,5 +16,7 @@
         <!-- Dashplus CSS -->
         <link href="<?php echo base_url(); ?>/assets/V2/dist/css/dashplus_1.min.css" rel="stylesheet">
         <link href="<?php echo base_url(); ?>/assets/V2/dist/css/dashplus_2.min.css" rel="stylesheet">
+        <link href="<?php echo base_url(); ?>/assets/V2/dist/css/demo.css" rel="stylesheet">
+
 
     </head>

@@ -51,11 +51,18 @@ class Admin extends MX_Controller {
         $this->load->view('buttons');
     }
 
-     public function configuration()
+     public function ajout_questionnaire()
     {
         
          
-        $this->load->view('configuration_view');
+        $this->load->view('ajout_questionnaire_view');
+    }
+
+     public function ajouter_valeur()
+    {
+        
+         
+        $this->load->view('ajouter_valeur_view');
     }
 
 }
