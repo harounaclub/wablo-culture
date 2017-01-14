@@ -2,16 +2,13 @@
 
 class Entreprise extends MX_Controller {
 
-    public function __construct()
-    {
+    public function __construct(){
         parent::__construct();
         $this->load->model('entreprise_model');
     }
 
-    public function index()
-    {
+    public function index(){
         
-         
         $this->load->view('main_view'); 
     }
 
