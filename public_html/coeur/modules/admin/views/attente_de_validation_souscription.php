@@ -25,7 +25,7 @@
             <section id="content">
                 <div class="container">
                     <div class="block-header clearfix">
-                        <h2 class="pull-left">Entreprise</h2>
+                        <h2 class="pull-left">Liste des souscriptions en attente de validation</h2>
 
                         <ul class="breadcrumb pull-right">
                             <li><a href="#">Home</a></li>
@@ -38,7 +38,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h2>Liste des entreprises en attente de validation
+                                    <h2>Liste des souscriptions
                                         <small>
                                         </small>
                                     </h2>
@@ -50,22 +50,26 @@
                                             <tr>
                                                 <th data-column-id="id" data-type="numeric">ID</th>
                                                 <th data-column-id="sender">Societé</th>
-                                                <th data-column-id="nom" data-order="desc">Nom & prenom</th>
-                                                <th data-column-id="mode" data-order="desc">Mode de paiement</th>
-                                                <th data-column-id="info" data-order="desc">Infos paiement</th>
-                                                <th data-column-id="telephone" data-order="desc">Telephone</th>
-                                                <th data-column-id="" data-order="">Action</th>
+                                                <th data-column-id="sender">Nom & prenom</th>
+                                                <th data-column-id="sender">Email</th>
+                                                <th data-column-id="sender">Contact bureau</th>
+                                                <th data-column-id="sender">Contact mobile</th>
+                                                <th data-column-id="sender">Package</th>
+                                                <th data-column-id="sender">Mode paiement</th>
+                                                <th data-column-id="sender">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td>10238</td>
                                                 <td>eduardo@pingpong.com</td>
-                                                <td>14.10.2013</td>
-                                                <td>14.10.2013</td>
-                                                <td>14.10.2013</td>
-                                                <td>14.10.2013</td>
-                                                <td><button class="btn btn-success waves-effect">Success</button></td>
+                                                <td>eduardo@pingpong.com</td>
+                                                <td>eduardo@pingpong.com</td>
+                                                <td>eduardo@pingpong.com</td>
+                                                <td>eduardo@pingpong.com</td>
+                                                <td>eduardo@pingpong.com</td>
+                                                <td>eduardo@pingpong.com</td>
+                                                <td></td>
                                             </tr>
                                             
                                         </tbody>

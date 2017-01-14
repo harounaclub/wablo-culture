@@ -37,11 +37,11 @@ class Admin extends MX_Controller {
         $this->load->view('entreprise_valider_view');
     }
      
-     public function inscription_2()
+     public function souscription()
     {
         
          
-        $this->load->view('inscription_2');
+        $this->load->view('souscription');
     }
 
     public function button()
@@ -79,7 +79,22 @@ class Admin extends MX_Controller {
          
         $this->load->view('liste_valeur_view');
     }
+
+    public function attente_de_validation_souscription()
+    {
+        
+         
+        $this->load->view('attente_de_validation_souscription');
+    }
+
+    public function liste_des_souscription_valide()
+    {
+        
+         
+        $this->load->view('liste_des_souscriptions_validee');
+    }
 }
+
 
 /* End of file accueil.php */
 /* Location: .//C/xampp/htdocs/annuaire.gouv/coeur/modules/accueil/controllers/accueil.php */ 
