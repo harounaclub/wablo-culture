@@ -62,7 +62,7 @@
                             <ul>
                                 <li><a href="<?php echo base_url() ?>index.php/admin/basic-elements.html">Basic Elements</a></li>
                                 <li><a href="<?php echo base_url() ?>index.php/admin/advanced-elements.html">Advanced Elements</a></li>
-                                <li><a href="<?php echo base_url() ?>index.php/admin/inscription">Inscription</a></li>
+                                <li><a href="<?php echo base_url() ?>index.php/admin/configuration">Configuration</a></li>
                                 <li><a href="<?php echo base_url() ?>index.php/admin/inscription_2">Inscription 2</a></li>
                                 <li><a href="<?php echo base_url() ?>index.php/admin/sample-forms.html">Sample Forms</a></li>
                             </ul>
