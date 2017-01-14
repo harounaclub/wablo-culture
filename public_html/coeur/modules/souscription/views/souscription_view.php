@@ -147,7 +147,7 @@
                                 
                                 
                                 
-                                 <div class="form-group">
+                                 <div class="form-group col-md-6">
                                   <label class="form-label">* <?php echo htmlentities("Choisir un package"); ?></label>
                                   <div class="controls">
                                     <select name="id_package">
@@ -168,22 +168,14 @@
                                     </div>
                                  </div>
                                 
-                                 <div class="form-group">
-                                    <label for="">* Mode de paiement</label>
-                                    <div class="row">
-                                       
-                                        <div class="col-md-12">
-                                            <select name="mode_paiement" id="mode_paiement" class="form-control" >
-                                                <option value="">choisisser un mode de paiement</option>
-                                                <option value="">Paiement mobile</option>
-                                                <option value="">Carte bancaire</option>                                   
-                                                
-                                            </select>
-                                        </div>
-                                       
-                                    </div>
-                                    
-                                </div>                     
+                                <div class="form-group">
+                                 <label class="form-label">* Mode de paiement</label>
+                                 <div class="controls">
+                                   <?php echo form_dropdown("mode_paiement",$mode_paiement,"","id='mode_paiement'"); ?>
+                                 </div>
+                               </div>
+                            
+
                                 
                                 
                             

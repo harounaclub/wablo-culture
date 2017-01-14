@@ -9,7 +9,8 @@ class Souscription extends MX_Controller {
     }
 
     public function index(){        
-         $donnees['liste_package'] = $this->souscription_model->liste_package();
+        $donnees['liste_package'] = $this->souscription_model->liste_package();
+        $donnees['mode_paiement'] = array(''=>"Selection...",'1'=>"Paiement mobile",'2'=>"Carte bancaire");
 //        var_dump($donnees['liste_package']);
         $this->load->view('souscription_view',$donnees); 
         
@@ -76,14 +77,14 @@ class Souscription extends MX_Controller {
         
         $donnees['liste_package'] = $this->souscription_model->liste_package();
         
-		$query = $this->souscription_model->get_direction($id_directions);
+		$query = $this->souscription_model->get_souscription($id_souscription);
 		foreach ($query->result() as $row) {
-			$code_directions = $row->code_directions;
-			$name_directions = $row->name_directions;	
-			$id_typeDirections = $row->id_typeDirections;
-			$id_direction_mere = $row->id_direction_mere;
-			$id_regions = $row->id_regions;
-			$id_departements = $row->id_departements;			
+			$donnees['nom_societe'] = $row->nom_societe;
+			$donnees['nom_souscripteur'] = $row->nom_souscripteur;	
+			$donnees['prenom_souscripteur'] = $row->prenom_souscripteur;
+			$donnees['email'] = $row->email;
+			$donnees['phone_mobile'] = $row->phone_mobile;
+			$donnees['phone_bureau'] = $row->phone_bureau;			
 			//$parent_directions = $row->parent_directions;				
 		}
 		

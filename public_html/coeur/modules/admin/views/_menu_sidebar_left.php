@@ -10,8 +10,8 @@
                             <a href="#" data-dp-action="submenu-toggle"><i class="zmdi zmdi-palette"></i>&nbsp;<span>Dashboard</span></a>
                             
                             <ul>
-                                <li><a href="<?php echo base_url() ?>index.php/admin/index-2.html">Dashboard v1</a></li>
-                                <li><a href="<?php echo base_url() ?>index.php/admin/dashboard-v2.html">Dashboard v2</a></li>
+                                <li><a href="<?php echo base_url() ?>index.php/admin/liste_des_valeurs">Liste des valeurs</a></li>
+                                <li><a href="<?php echo base_url() ?>index.php/admin/liste_des_questionnaires">Liste des questionnaires</a></li>
                                 <li><a href="<?php echo base_url() ?>index.php/admin/dashboard-v3.html">Dashboard v3</a></li>
                                 <li><a href="<?php echo base_url() ?>index.php/admin/dashboard-v4.html">Dashboard v4</a></li>
                             </ul>
@@ -58,12 +58,12 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="#" data-dp-action="submenu-toggle"><i class="zmdi zmdi-border-color"></i>&nbsp;<span>Forms</span></a>
+                            <a href="#" data-dp-action="submenu-toggle"><i class="zmdi zmdi-border-color"></i>&nbsp;<span>Configuration</span></a>
                             <ul>
-                                <li><a href="<?php echo base_url() ?>index.php/admin/basic-elements.html">Basic Elements</a></li>
-                                <li><a href="<?php echo base_url() ?>index.php/admin/advanced-elements.html">Advanced Elements</a></li>
-                                <li><a href="<?php echo base_url() ?>index.php/admin/configuration">Configuration</a></li>
-                                <li><a href="<?php echo base_url() ?>index.php/admin/inscription_2">Inscription 2</a></li>
+                                <li><a href="<?php echo base_url() ?>index.php/admin/ajouter_valeur">Ajouter une valeur</a></li>
+                                <li><a href="<?php echo base_url() ?>index.php/admin/ajout_questionnaire">Ajouter des questionnaires</a></li>
+                                <li>
+                                <li><a href="<?php echo base_url() ?>index.php/admin/inscription_2">Inscription</a></li>
                                 <li><a href="<?php echo base_url() ?>index.php/admin/sample-forms.html">Sample Forms</a></li>
                             </ul>
                         </li>
