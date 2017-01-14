@@ -37,7 +37,19 @@ class Administration extends MX_Controller {
         $this->load->view('inscription_2');
     }
 
+     public function ajout_unite()
+    {
+        
+         
+        $this->load->view('ajout_unite_view');
+    }
     
+     public function liste_unite()
+    {
+        
+         
+        $this->load->view('liste_des_unites');
+    }
 
 }
 

@@ -4,7 +4,7 @@
                     <a href="#"><i class="menu-icon zmdi zmdi-arrow-left"></i></a>
                 </li>
                 <li class="header-logo hidden-xs">
-                    <a href="index-2.html">Dashplus Admin</a>
+                    <a href="index-2.html">W@blo culture</a>
                 </li>
 
                 <li class="pull-right">

@@ -10,8 +10,8 @@
                             <a href="#" data-dp-action="submenu-toggle"><i class="zmdi zmdi-palette"></i>&nbsp;<span>Dashboard</span></a>
                             
                             <ul>
-                                <li><a href="<?php echo base_url() ?>index.php/admin/index-2.html">Dashboard v1</a></li>
-                                <li><a href="<?php echo base_url() ?>index.php/admin/dashboard-v2.html">Dashboard v2</a></li>
+                                <li><a href="<?php echo base_url() ?>index.php/admin/liste_des_valeurs">Liste des valeurs</a></li>
+                                <li><a href="<?php echo base_url() ?>index.php/admin/liste_des_questionnaires">Liste des questionnaires</a></li>
                                 <li><a href="<?php echo base_url() ?>index.php/admin/dashboard-v3.html">Dashboard v3</a></li>
                                 <li><a href="<?php echo base_url() ?>index.php/admin/dashboard-v4.html">Dashboard v4</a></li>
                             </ul>

@@ -65,6 +65,20 @@ class Admin extends MX_Controller {
         $this->load->view('ajouter_valeur_view');
     }
 
+
+     public function liste_des_questionnaires()
+    {
+        
+         
+        $this->load->view('liste_des_questionnaires');
+    }
+
+    public function liste_des_valeurs()
+    {
+        
+         
+        $this->load->view('liste_valeur_view');
+    }
 }
 
 /* End of file accueil.php */

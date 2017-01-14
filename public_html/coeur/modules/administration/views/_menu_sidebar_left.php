@@ -60,11 +60,11 @@
                         <li class="nav-item">
                             <a href="#" data-dp-action="submenu-toggle"><i class="zmdi zmdi-border-color"></i>&nbsp;<span>Forms</span></a>
                             <ul>
-                                <li><a href="<?php echo base_url() ?>index.php/administration/basic-elements.html">Basic Elements</a></li>
+                                <li><a href="<?php echo base_url() ?>index.php/administration/ajout_unite">Ajout d'une unite</a></li>
                                 <li><a href="<?php echo base_url() ?>index.php/administration/advanced-elements.html">Advanced Elements</a></li>
-                                <li><a href="<?php echo base_url() ?>index.php/administration/inscription">Inscription</a></li>
-                                <li><a href="<?php echo base_url() ?>index.php/administration/inscription_2">Inscription 2</a></li>
-                                <li><a href="<?php echo base_url() ?>index.php/administration/sample-forms.html">Sample Forms</a></li>
+                               <!--  <li><a href="<?php echo base_url() ?>index.php/administration/inscription">Inscription</a></li> -->
+                                <li><a href="<?php echo base_url() ?>index.php/administration/inscription_2">Inscription </a></li>
+                                <li><a href="<?php echo base_url() ?>index.php/administration/liste_unite">liste des unites</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
