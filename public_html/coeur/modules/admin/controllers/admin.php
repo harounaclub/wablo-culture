@@ -9,86 +9,94 @@ class Admin extends MX_Controller {
     }
 
 
-    public function index()
-    {
+    public function index(){
         
          
         $this->load->view('main_view');
     }
 
-    public function login()
-    {
+    public function login(){
         
          
         $this->load->view('login_view');
     }
 
-     public function attente_de_validation()
-    {
+     public function attente_de_validation(){
         
          
         $this->load->view('attente_de_validation_view');
     }
 
-    public function entreprise_valide()
-    {
+    public function entreprise_valide(){
         
          
         $this->load->view('entreprise_valider_view');
     }
      
-     public function souscription()
-    {
+     public function souscription(){
         
          
         $this->load->view('souscription');
     }
 
-    public function button()
-    {
+    public function button(){
         
          
         $this->load->view('buttons');
     }
 
-     public function ajout_questionnaire()
-    {
+     public function ajout_questionnaire(){
         
          
         $this->load->view('ajout_questionnaire_view');
     }
 
-     public function ajouter_valeur()
-    {
+    
+    
+     public function ajouter_valeur(){        
+        
+        $this->load->view('ajouter_valeur_view');
         
          
-        $this->load->view('ajouter_valeur_view');
+    }
+    
+    
+    function insertion_valeur(){
+        
+        $this->form_validation->set_rules('mytext[]','liste ds valeurs','trim|required|xss_clean');
+        if($this->form_validation->run()){
+            
+            $liste_valeurs[] = $this->input->post('mytext[]');
+            $nbre = count($liste_valeurs);
+            
+            echo $nbre;
+            exit();
+            
+            
+        }else $this->load->view('ajouter_valeur_view');
+        
     }
 
 
-     public function liste_des_questionnaires()
-    {
+     public function liste_des_questionnaires(){
         
          
         $this->load->view('liste_des_questionnaires');
     }
 
-    public function liste_des_valeurs()
-    {
+    public function liste_des_valeurs(){
         
          
         $this->load->view('liste_valeur_view');
     }
 
-    public function attente_de_validation_souscription()
-    {
+    public function attente_de_validation_souscription(){
         
          
         $this->load->view('attente_de_validation_souscription');
     }
 
-    public function liste_des_souscription_valide()
-    {
+    public function liste_des_souscription_valide(){
         
          
         $this->load->view('liste_des_souscriptions_validee');

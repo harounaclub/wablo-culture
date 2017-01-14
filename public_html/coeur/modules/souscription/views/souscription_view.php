@@ -221,7 +221,7 @@
             }else{
                 
                 $("#okvalid").attr("disabled", "disabled").html("Ajouter des données en cours... ");
-                var $this = $(this);
+                var $this = $(this);                
                 
                 $.ajax({
                 url: "<?php echo base_url();?>souscription/ajout_souscription/",

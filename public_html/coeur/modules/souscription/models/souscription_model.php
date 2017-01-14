@@ -104,5 +104,16 @@ class Souscription_model extends CI_Model {
     }
     
     
+    function insert_societe($data){			
+        
+        if($this->db->insert('societe',$data)){
+            return true;
+        }else{
+            return false;
+        }	
+        
+    } 
+    
+    
     
    }

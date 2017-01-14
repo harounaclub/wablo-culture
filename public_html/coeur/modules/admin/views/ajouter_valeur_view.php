@@ -42,17 +42,37 @@
                                         <small>Vous pouvez ajouter plusieurs valeurs.</small>
                                     </h2>
                                 </div>
-        
-                                <div class="card-body card-padding">
+                                
+                                <div class="zone-form">
+                                    <?php
+                                          $attributes = array('id' => 'addform', 'name'=> 'addform','method'=>'POST');
+                                         echo form_open('admin/insertion_valeur', $attributes);
+                                    ?>
+                                    
+                                    <div class="card-body card-padding">
                                     <p class="c-black f-500"></p>
-                                    <div class="form-group">
-                                        <div class="fg-line">
+                                    <div class="form-group input_fields_wrap">
+                                            
+                                        <button class="add_field_button">Ajouter une autre valeur</button><br/>
+                                        <div class="fg-line"><input type="text" name="mytext[]" class="form-control input-sm" placeholder="Ajouter valeur"></div><br/><br/>
+                                            
+                                        
+<!--
+                                        <div class="fg-line col-sm-2">
 
                                             <input type="text" class="form-control input-sm" placeholder="Ajouter valeur">
 
                                         </div>
+-->
+                                        
+<!--
+                                        <div class="col-sm-2">
+                                           <button class="btn btn-primary btn-sm btn-small" id="ajout1" type="button">Ajouter</button>
+                                          </div>
+-->
                                     </div>
         
+<!--
                                     <div class="form-group">
                                         <div class="fg-line">
                                             <input type="text" class="form-control" placeholder="Ajouter valeur">
@@ -76,10 +96,18 @@
                                             <input type="text" class="form-control input-lg" placeholder="Ajouter valeur">
                                         </div>
                                     </div>
+-->
 
-                                    <button class="btn btn-default btn-icon-text"><i class="zmdi zmdi-more-vert"></i>Valider
-                                        </button>
+                                        <div class="row">
+                                            <button type="submit" id="okvalid" class="btn btn-default btn-icon-text"><i class="zmdi zmdi-more-vert"></i>Valider</button>
+                                        </div>
+                                    
                                 </div>
+                                    <?php echo form_close(); ?>
+                                
+                                </div>
+                                
+                                
                             </div>
                                 
                         </div>
@@ -123,3 +151,31 @@
 
 <!-- Mirrored from www.dashmonk.com/demo/dashplus/pages/forms/basic-elements.html by HTTrack Website Copier/3.x [XR&CO'2013], Sat, 08 Oct 2016 00:33:59 GMT -->
 </html>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        var max_fields      = 10; //maximum input boxes allowed
+        var wrapper         = $(".input_fields_wrap"); //Fields wrapper
+        var add_button      = $(".add_field_button"); //Add button ID
+
+        var x = 1; //initlal text box count
+        $(add_button).click(function(e){ //on add input button click
+            e.preventDefault();
+            if(x < max_fields){ //max input box allowed
+                x++; //text box increment
+                //class="form-control input-sm" placeholder="Ajouter valeur"
+                $(wrapper).append('<div class="fg-line"><input type="text" name="mytext[]" class="form-control input-sm" placeholder="Ajouter valeur"/><a href="#" class="remove_field">Supprimer</a></div><br/><br/>'); //add input box
+            }
+        });
+
+        $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+            e.preventDefault(); $(this).parent('div').remove(); x--;
+        });
+        
+        $("form#addform").on("submit",function(){
+            
+            
+        });
+        
+});
+</script>

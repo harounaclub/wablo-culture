@@ -53,9 +53,21 @@ class Souscription extends MX_Controller {
                 'id_package'=>$id_package,
                 'montant_souscription'=>$montant_package,
                 
-            );
+            );  
+            
             
             if($this->souscription_model->insert_souscription($data_array)){
+                
+                $id_souscription = mysql_insert_id();
+                
+                $data_societe = array(
+            
+                    'raison_sociale_societe'=>$societe,
+                    'id_souscription'=>$id_souscription, 
+                    
+                );
+                
+                $this->souscription_model->insert_societe($data_societe);
                 
                 $reponse = '1';
                 $return = array('reponse' => $reponse);
