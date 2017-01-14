@@ -31,8 +31,8 @@ class Souscription_model extends CI_Model {
     }
     
 		
-    function delete_souscription($id){
-        $this->db->where('id_souscription',$id);
+    function delete_souscription($id_souscription){
+        $this->db->where('id_souscription',$id_souscription);
         $this->db->delete('souscription');
     }
     
@@ -74,7 +74,28 @@ class Souscription_model extends CI_Model {
         if($q->num_rows()>0){
           
             foreach ($q->result() as $lign){
-              $data[]=$lign;
+              $data[] = $lign;
+            }
+          
+          return $data;
+        }
+        
+    }
+    
+    
+    function montant_package($id_package){
+        
+        $data = "";
+        
+        $this->db->select('*');
+        $this->db->from('package');
+        $this->db->where('id_package',$id_package);
+        $q = $this->db->get();        
+        
+        if($q->num_rows()>0){
+          
+            foreach ($q->result() as $lign){
+              $data = $lign->montant_package;
             }
           
           return $data;

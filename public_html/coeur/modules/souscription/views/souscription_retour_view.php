@@ -91,7 +91,7 @@
             <div class="formulare">
                 <div class="row">
                     <div class="col-md-6">
-                        <h4>Vous n'avez besoin que d'un compte </h4>
+                        <h4><?php echo htmlentities("Souscription effectuée avec succès"); ?> </h4>
                         <p>Pour utiliser W@bloCulture un seul compte suffit .</p>
 
                         <p></p>
@@ -101,89 +101,7 @@
                         </div>
 
                     </div>
-                    <div class="col-md-6">
-                        <div class="zone-form">
-                            <?php
-                                  $attributes = array('id' => 'addform', 'name'=> 'addform','method'=>'POST');
-                                 echo form_open('souscription/ajout_souscription', $attributes);
-                            ?>
-
-                            
-                             <div class="form-group">
-                                    <label for=""> * Nom de la societe</label>
-                                    <input type="text" name="societe" class="form-control" id="rs">
-                                </div>
-
-                            
-                                <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <label for=""> * Nom</label>
-                                        <input type="text" name="nom_souscripteur" class="form-control" id="nom">
-                                    </div>
-                                    
-                                    <div class="form-group col-md-6">
-                                        <label for=""> * Prénoms</label>
-                                        <input type="text" name="prenom_souscripteur" class="form-control" id="prenom_souscripteur">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for=""> * Email </label>
-                                    <input type="text" name="email" class="form-control" id="">
-                                </div>
-                                
-                                 <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <label for=""> * Contact bureau</label>
-                                        <input type="text" name="phone_bureau" class="form-control" id="">
-                                    </div>
-                                    
-                                    <div class="form-group col-md-6">
-                                        <label for=""> * Contact Mobile</label>
-                                        <input type="text" name="phone_mobile" class="form-control" id="">
-                                    </div>
-                                </div>
-                                
-                                
-                                
-                                
-                                 <div class="form-group col-md-6">
-                                  <label class="form-label">* <?php echo htmlentities("Choisir un package"); ?></label>
-                                  <div class="controls">
-                                    <select name="id_package">
-                                     <option value="">Sélection..</option>
-                                            <?php
-
-                                              if(isset($liste_package)){
-                                                foreach ($liste_package as $value) {
-                                               ?>
-                                                  <option value="<?php echo $value->id_package; ?>"><?php echo $value->code_package." / ".$value->montant_package."F CFA"; ?></option>
-
-                                                <?php
-                                                }
-
-                                              }
-                                            ?>
-                                    </select>
-                                    </div>
-                                 </div>
-                                
-                                <div class="form-group">
-                                 <label class="form-label">* Mode de paiement</label>
-                                 <div class="controls">
-                                   <?php echo form_dropdown("mode_paiement",$mode_paiement,"","id='mode_paiement'"); ?>
-                                 </div>
-                               </div>
-                            
-
-                                
-                                
-                            
-                                <button type="submit" id="okvalid" class="btn btn-primary">Créer le compte</button>
-                                <?php echo form_close(); ?>
-
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -231,7 +149,7 @@
                 success: function(json) {
                     if(json.reponse === '1') {
 
-                      $("#getcontent").load("<?php echo base_url("souscription/retour") ?>");
+                      $("#getcontent").load("<?php echo base_url("souscription/index") ?>");
                       //$.growl.notice({ message: "Votre opération s'est bien effectuée!" });
 
 

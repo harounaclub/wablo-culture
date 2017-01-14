@@ -19,9 +19,7 @@ class Souscription extends MX_Controller {
     
     // Cette fonction permet d'ajouter une souscription
     function ajout_souscription(){
-        
-        $donnees['liste_package'] = $this->souscription_model->liste_package();
-        
+                
         $this->form_validation->set_rules('societe','raison sociale de la société','trim|required|xss_clean');
 //        $this->form_validation->set_rules('nom','nom du souscripteur','trim|required|xss_clean');
 //        $this->form_validation->set_rules('prenom','prenom du souscripteur','trim|required|xss_clean');
@@ -30,7 +28,7 @@ class Souscription extends MX_Controller {
 //        $this->form_validation->set_rules('phone_mobile','mobile phone du souscripteur','trim|required|xss_clean');
         
         if($this->form_validation->run()){
-             echo"je suis encore .....";
+            
             //Liste des variables postées
             $societe = $this->input->post('societe');
             $nom_souscripteur = $this->input->post('nom_souscripteur');
@@ -40,6 +38,8 @@ class Souscription extends MX_Controller {
             $phone_mobile=$this->input->post('phone_mobile');
             $id_package=$this->input->post('id_package');
             $mode_paiement=$this->input->post('mode_paiement');
+            
+            $montant_package = $this->souscription_model->montant_package($id_package);
             
             $data_array = array(
             
@@ -51,6 +51,7 @@ class Souscription extends MX_Controller {
                 'phone_mobile'=>$phone_mobile,
                 'id_mode_paiement'=>$mode_paiement,
                 'id_package'=>$id_package,
+                'montant_souscription'=>$montant_package,
                 
             );
             
@@ -73,9 +74,11 @@ class Souscription extends MX_Controller {
     }
     
     
+    //fonction permettant la modification d'une souscription
     function edit_souscription($id_souscription){
         
         $donnees['liste_package'] = $this->souscription_model->liste_package();
+        $donnees['liste_package'] = $id_souscription;
         
 		$query = $this->souscription_model->get_souscription($id_souscription);
 		foreach ($query->result() as $row) {
@@ -84,8 +87,9 @@ class Souscription extends MX_Controller {
 			$donnees['prenom_souscripteur'] = $row->prenom_souscripteur;
 			$donnees['email'] = $row->email;
 			$donnees['phone_mobile'] = $row->phone_mobile;
-			$donnees['phone_bureau'] = $row->phone_bureau;			
-			//$parent_directions = $row->parent_directions;				
+			$donnees['phone_bureau'] = $row->phone_bureau;	
+			$donnees['id_mode_paiement'] = $row->id_mode_paiement;
+			$donnees['id_package'] = $row->id_package;				
 		}
 		
 		$data['code_directions']=array ('name'=>'code_directions', 'id'=>'code_directions', 'value'=>set_value('code_directions',$code_directions));
@@ -93,10 +97,19 @@ class Souscription extends MX_Controller {
         
     }
     
-    
+    //fonction permettant la suppression d'une souscription
     function supprimer_souscription($id_souscription){
         
+        $this->souscription_model->delete_souscription($id_souscription);
+        redirect (base_url().'index');
         
+    }
+    
+    
+    //formulaire de retour
+    function retour(){
+        
+        $this->load->view('souscription_view');
     }
     
 
