@@ -38,17 +38,17 @@
                         <div class="col-sm-6">
                             <div class="card" style="min-height: 500px">
                                 <div class="card-header">
-                                    <h2>Ajouter une valeur
-                                        <small>Vous pouvez ajouter plusieurs valeurs.</small>
-                                    </h2>
+                                    <div class="col-md-2 "></div>
+                                    <div class="col-md-2 " ><h1><button class="btn md-bg-light-blue waves-effect"><?php echo $titre;?></button></h1></div>
+                                    <div class="col-md-2"></div>
                                 </div>
-        
+                                <br/><br/>
                                 <div class="card-body card-padding">
-                                    <p class="c-black f-500">Nom de la societé</p>
+                                    <p class="c-black f-500"></p>
                                     <div class="form-group">
                                         <div class="fg-line">
 
-                                            <input type="text" class="form-control input-sm" placeholder="Nom de la socité">
+                                            <input type="text" class="form-control input-sm" placeholder="Raison Sociale">
 
                                         </div>
                                     </div>

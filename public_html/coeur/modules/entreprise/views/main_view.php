@@ -297,7 +297,7 @@
 
                     <!-- H2 heading -->
                     <h2>Notre <span> longue experiences </span> <br>
-                        vous aidera a faire croite votre business</h2>
+                        vous aidera a faire croitre votre business</h2>
 
                     <!-- Paragraph -->
                     <div class="row">

@@ -38,10 +38,12 @@
                         <div class="col-sm-6">
                             <div class="card" style="min-height: 500px">
                                 <div class="card-header">
-                                    <h2>Questionnaire
-                                        <small>Vous pouvez ajouter plusieurs questions au questionnaire.</small>
-                                    </h2>
+                                    <div class="col-md-2 "></div>
+                                    <div class="col-md-2 " ><h1><button class="btn md-bg-light-blue waves-effect"><?php echo $titre;?></button></h1></div>
+                                    <div class="col-md-2"></div>
                                 </div>
+                                <br/><br/>
+                                
                                 
                                 
                                 <div class="zone-form">

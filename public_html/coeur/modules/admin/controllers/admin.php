@@ -33,10 +33,14 @@ class Admin extends MX_Controller {
         $this->load->view('entreprise_valider_view');
     }
      
-     public function souscription(){
+    
+    
+    public function souscription(){
         
-         
-        $this->load->view('souscription');
+        $donnees['liste_des_valeurs'] = $this->liste_des_valeurs();
+        $donnees['titre'] = "Ajouter une société";
+        $this->load->view('souscription',$donnees);
+        
     }
 
     public function button(){
@@ -49,6 +53,7 @@ class Admin extends MX_Controller {
      public function ajout_questionnaire(){
         
         $donnees['liste_des_valeurs'] = $this->liste_des_valeurs();
+        $donnees['titre'] = "Ajouter des éléments dans le questionnaire";
         
         
         $this->form_validation->set_rules('id_valeur','la valeur sélectrionnée','trim|required|xss_clean');
@@ -119,14 +124,7 @@ class Admin extends MX_Controller {
     
      public function ajouter_valeur(){        
         
-        $this->load->view('ajouter_valeur_view');
-        
-         
-    }
-    
-    
-    function insertion_valeur(){
-        
+        $donnees['titre'] = "proposition de valeurs d'entreprise  par w@blo";
         $this->form_validation->set_rules('valeur1','liste des valeurs','trim|required|xss_clean');
         if($this->form_validation->run()){
             
@@ -151,8 +149,9 @@ class Admin extends MX_Controller {
             }
             
             
-        }else $this->load->view('ajouter_valeur_view');
+        }else $this->load->view('ajouter_valeur_view',$donnees);
         
+         
     }
     
     

@@ -162,6 +162,74 @@ class Admin_model extends CI_Model {
         
         
     }
+    
+    
+    
+    
+    //Methodes traitant les societes
+    function insert_societe($data){			
+        
+        if($this->db->insert('societe',$data)){
+            return true;
+        }else{
+            return false;
+        }	
+        
+    } 
+    
+    
+    function update_societe($id,$data){
+        $this->db->where('id_societe', $id);
+        if ($this->db->update('societe', $data)) {
+            return true;
+        } else {
+            return false;
+        }	
+        
+    }
+    
+		
+    function delete_societe($id_societe){
+        $this->db->where('id_societe',$id_societe);
+        $this->db->delete('societe');
+    } 
+    
+    
+    function liste_societe(){
+        
+        $data = array();
+        
+        $this->db->select('*');
+        $this->db->from('societe');
+        $q = $this->db->get();        
+        
+        if($q->num_rows()>0){
+          
+            foreach ($q->result() as $lign){
+              $data[] = $lign;
+            }
+          
+          return $data;
+        }
+        
+    } 
+    
+    
+    function societe_existe($nom_societe){
+        
+        $this->db->select('*');
+        $this->db->from('societe');
+        $this->db->where('raison_sociale_societe',$nom_societe);
+        $query = $this->db->get();  
+        
+        $rowcount = $query->num_rows();
+        
+        if($rowcount >0){
+            return true;
+        }else return false;      
+        
+        
+    }
 
 
     
