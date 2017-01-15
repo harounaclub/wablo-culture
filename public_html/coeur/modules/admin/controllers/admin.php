@@ -38,7 +38,7 @@ class Admin extends MX_Controller {
     public function souscription(){
         
         $donnees['liste_des_valeurs'] = $this->liste_des_valeurs();
-        $donnees['titre'] = "Ajouter une société";
+        $donnees['titre'] = "Ajouter une société ayant souscrit";
         $this->load->view('souscription',$donnees);
         
     }

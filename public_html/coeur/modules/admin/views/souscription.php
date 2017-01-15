@@ -108,8 +108,13 @@
                                                 </div>
                                             </div>
 
-                                    <button class="btn btn-default btn-icon-text"><i class="zmdi zmdi-more-vert"></i>Valider
-                                        </button>
+                                    <div class="row">
+                                            <div class="col-sm-8"></div>
+                                            <div class="col-sm-2">
+                                                <button type="submit" id="okvalid" class="btn btn-default btn-icon-text"><i class="zmdi zmdi-check-circle"></i>Valider</button>
+                                            </div>
+                                            
+                                        </div>
                                 </div>
                             </div>
                                 
