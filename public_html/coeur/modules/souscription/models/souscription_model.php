@@ -56,8 +56,22 @@ class Souscription_model extends CI_Model {
         
     }
 
-    function souscrit_existe($nom_societe){
+    function liste_souscription($nom_societe){
         
+        $data = array();
+        
+        $this->db->select('*');
+        $this->db->from('souscription');
+        $q = $this->db->get();        
+        
+        if($q->num_rows()>0){
+          
+            foreach ($q->result() as $lign){
+              $data[] = $lign;
+            }
+          
+          return $data;
+        }
         
     }
     

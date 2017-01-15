@@ -48,55 +48,67 @@
                                           $attributes = array('id' => 'addform', 'name'=> 'addform','method'=>'POST');
                                          echo form_open('admin/insertion_valeur', $attributes);
                                     ?>
+                                    <input type="hidden" class="form-control" name="nb_valeur" id="nb_valeur" value="1">
                                     
                                     <div class="card-body card-padding">
                                     <p class="c-black f-500"></p>
                                     <div class="form-group input_fields_wrap">
                                             
-                                        <button class="add_field_button">Ajouter une autre valeur</button><br/>
-                                        <div class="fg-line"><input type="text" name="mytext[]" class="form-control input-sm" placeholder="Ajouter valeur"></div><br/><br/>
-                                            
-                                        
-<!--
-                                        <div class="fg-line col-sm-2">
-
-                                            <input type="text" class="form-control input-sm" placeholder="Ajouter valeur">
-
-                                        </div>
--->
-                                        
-<!--
-                                        <div class="col-sm-2">
+                                        <div class="row form-row" id="input1">
+                                          <div class="fg-line col-sm-2">
+                                            <input type="text" placeholder="Ajouter valeur" class="form-control" id="valeur1" name="valeur1">
+                                            <textarea placeholder="Signification" class="form-control" id="sens1" name="sens1"></textarea>                                  
+                                          </div>
+                                          <div class="col-sm-2">
                                            <button class="btn btn-primary btn-sm btn-small" id="ajout1" type="button">Ajouter</button>
                                           </div>
--->
+                                        </div>
+                                        
+                                        <div class="row form-row" id="input2">
+                                          <div class="fg-line col-sm-2">
+                                            <input type="text" placeholder="Ajouter valeur" class="form-control" id="valeur2" name="valeur2">
+                                            <textarea placeholder="Signification" class="form-control" id="sens2" name="sens2"></textarea>
+                                          </div>
+                                          <div class="col-sm-2">
+                                           <button class="btn btn-primary btn-sm btn-small" id="ajout2" type="button">Ajouter</button>
+                                          </div>
+                                        </div>
+                                        
+                                        <div class="row form-row" id="input3">
+                                          <div class="fg-line col-sm-2">
+                                            <input type="text" placeholder="Ajouter valeur" class="form-control" id="valeur3" name="valeur3">
+                                            <textarea placeholder="Signification" class="form-control" id="sens3" name="sens3"></textarea>
+                                          </div>
+                                          <div class="col-sm-2">
+                                           <button class="btn btn-primary btn-sm btn-small" id="ajout3" type="button">Ajouter</button>
+                                          </div>
+                                        </div>
+                                        
+                                        <div class="row form-row" id="input4">
+                                          <div class="fg-line col-sm-2">
+                                            <input type="text" placeholder="Ajouter valeur" class="form-control" id="valeur4" name="valeur4">
+                                            <textarea placeholder="Signification" class="form-control" id="sens4" name="sens4"></textarea>
+                                          </div>
+                                          <div class="col-sm-2">
+                                           <button class="btn btn-primary btn-sm btn-small" id="ajout4" type="button">Ajouter</button>
+                                          </div>
+                                        </div>
+                                        
+                                        <div class="row form-row" id="input5">
+                                          <div class="fg-line col-sm-2">
+                                            <input type="text" placeholder="Ajouter valeur" class="form-control" id="valeur5" name="valeur5">
+                                            <textarea placeholder="Signification" class="form-control" id="sens5" name="sens5"></textarea>
+                                          </div>
+                                          <div class="col-sm-2">
+                                           <button class="btn btn-primary btn-sm btn-small" id="ajout5" type="button">Ajouter</button>
+                                          </div>
+                                        </div>
+                                            
+                                        
+
                                     </div>
         
-<!--
-                                    <div class="form-group">
-                                        <div class="fg-line">
-                                            <input type="text" class="form-control" placeholder="Ajouter valeur">
-                                        </div>
-                                    </div>
-        
-                                    <div class="form-group">
-                                        <div class="fg-line">
-                                            <input type="text" class="form-control input-lg" placeholder="Ajouter valeur">
-                                        </div>
-                                    </div>
 
-                                    <div class="form-group">
-                                        <div class="fg-line">
-                                            <input type="text" class="form-control input-lg" placeholder="Ajouter valeur">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <div class="fg-line">
-                                            <input type="text" class="form-control input-lg" placeholder="Ajouter valeur">
-                                        </div>
-                                    </div>
--->
 
                                         <div class="row">
                                             <button type="submit" id="okvalid" class="btn btn-default btn-icon-text"><i class="zmdi zmdi-more-vert"></i>Valider</button>
@@ -154,27 +166,70 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
-        var max_fields      = 10; //maximum input boxes allowed
-        var wrapper         = $(".input_fields_wrap"); //Fields wrapper
-        var add_button      = $(".add_field_button"); //Add button ID
+        
+        $("#input2").hide();
+        $("#input3").hide();
+        $("#input4").hide();
+        $("#input5").hide();
+        
+        $( "#ajout1" ).click(function() {
 
-        var x = 1; //initlal text box count
-        $(add_button).click(function(e){ //on add input button click
-            e.preventDefault();
-            if(x < max_fields){ //max input box allowed
-                x++; //text box increment
-                //class="form-control input-sm" placeholder="Ajouter valeur"
-                $(wrapper).append('<div class="fg-line"><input type="text" name="mytext[]" class="form-control input-sm" placeholder="Ajouter valeur"/><a href="#" class="remove_field">Supprimer</a></div><br/><br/>'); //add input box
-            }
-        });
+        $("#input2").show();
+         $("#nb_valeur").val("2");
+        
+       
+      });
 
-        $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-            e.preventDefault(); $(this).parent('div').remove(); x--;
-        });
+
+      $( "#ajout2" ).click(function() {
+
+        $("#input3").show();
+        $("#nb_valeur").val("3");
+       
+      });
+
+      $( "#ajout3" ).click(function() {
+
+        $("#input4").show();
+        $("#nb_valeur").val("4");
+       
+      });
+
+
+      $( "#ajout4" ).click(function() {
+
+        $("#input5").show();
+        $("#nb_valeur").val("5");
+       
+      });
+        
+        
         
         $("form#addform").on("submit",function(){
             
+            $("#okvalid").attr("disabled", "disabled").html("Ajouter des données en cours... ");
+            var $this = $(this);
             
+            $.ajax({
+                url: "<?php echo base_url();?>admin/insertion_valeur/",
+                type: $this.attr('method'),
+                data: $this.serialize(),
+                dataType: 'json', // JSON
+                success: function(json) {
+                    if(json.reponse === '1') {
+
+              $("#getcontent").load("<?php echo base_url("admin/ajouter_valeur") ?>");
+              //$.growl.notice({ message: "Votre opération s'est bien effectuée!" });
+
+
+              } else {
+                      //$.growl.error({ message: "Echec de l'opération, veuillez verifier les differentes dates et reprendre." });
+                      return false;
+                        }
+                    }
+            });
+            
+            return false;
         });
         
 });

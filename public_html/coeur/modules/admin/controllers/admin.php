@@ -63,19 +63,36 @@ class Admin extends MX_Controller {
     
     function insertion_valeur(){
         
-        $this->form_validation->set_rules('mytext[]','liste ds valeurs','trim|required|xss_clean');
+        $this->form_validation->set_rules('valeur1','liste ds valeurs','trim|required|xss_clean');
         if($this->form_validation->run()){
             
-            $liste_valeurs[] = $this->input->post('mytext[]');
-            $nbre = count($liste_valeurs);
+            $nbre_valeur = $this->input->post('nb_valeur');
             
-            echo $nbre;
-            exit();
+            for($i=1; $i <= $nbre_valeur; $i++){
+                
+                $valeur = $this->input->post('valeur'.$i);
+                $sens = $this->input->post('sens'.$i);
+                
+                $data_valeur = array(
+                    'libelle_liste_valeur'=>$valeur,
+                    'signification_valeur'=>$sens,
+                );
+                
+                if(!$this->admin_model->valeur_existe($valeur)){
+                    
+                    $this->admin_model->insert_valeur($data_valeur);
+                    
+                }
+                
+            }
             
             
         }else $this->load->view('ajouter_valeur_view');
         
     }
+    
+    
+    
 
 
      public function liste_des_questionnaires(){
