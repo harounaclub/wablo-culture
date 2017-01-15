@@ -37,11 +37,62 @@ class Admin extends MX_Controller {
     
     public function souscription(){
         
-        $donnees['liste_des_valeurs'] = $this->liste_des_valeurs();
+        $donnees['liste_des_packages'] = $this->liste_des_package();
+        
+        $option_package[0] = "Selectionner le mode de paiement";
+        $option_package[1] = "Paiement mobile";
+        $option_package[2] = "Carte bancaire";
+        
+        $donnees['mode_paiement'] = $option_package;
+        
         $donnees['titre'] = "Ajouter une société ayant souscrit";
-        $this->load->view('souscription',$donnees);
+        
+        $this->form_validation->set_rules('nom_societe','Raison sociale se la société','trim|required|xss_clean');
+        if($this->form_validation->run()){
+            
+            $nom_societe = $this->input->post('nom_societe');
+            $id_package = $this->input->post('id_package');
+            $phone_bureau = $this->input->post('phone_bureau');
+            $phone_mobile = $this->input->post('phone_mobile');
+            $nom_societe = $this->input->post('nom_societe');
+            $id_mode_paiement = $this->input->post('id_mode_paiement');
+            
+            $data_societe = array(
+                        'raison_sociale_societe'=>$nom_societe,
+                        'id_package'=>$id_package,
+                        'phone_societe'=>$phone_bureau,
+                        'adresse_societe'=>$adresse_societe,
+                        'raison_sociale_societe'=>$nom_societe,
+                    );
+            
+            
+        }else $this->load->view('souscription',$donnees);
         
     }
+    
+    
+    private function liste_des_package(){
+        
+       $liste_des_packages = $this->admin_model->liste_package();
+         $option_package = array();
+         
+         if($liste_des_packages){
+             
+             $option_package[0] = "Choisir un package...";
+             foreach($liste_des_packages as $valeur){
+                 
+                 $option_package[$valeur->id_package] = $valeur->code_package." / ".$valeur->montant_package;
+                 
+             }
+             
+             $liste_package = $option_package;
+         }
+        
+        return $liste_package;
+         
+    }
+    
+    
 
     public function button(){
         

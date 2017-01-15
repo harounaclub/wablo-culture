@@ -230,6 +230,27 @@ class Admin_model extends CI_Model {
         
         
     }
+    
+    
+    //la table des packages
+    function liste_package(){
+        
+        $data = array();
+        
+        $this->db->select('*');
+        $this->db->from('package');
+        $q = $this->db->get();        
+        
+        if($q->num_rows()>0){
+          
+            foreach ($q->result() as $lign){
+              $data[]=$lign;
+            }
+          
+          return $data;
+        }
+        
+    }
 
 
     

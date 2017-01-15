@@ -223,7 +223,7 @@
                 success: function(json) {
                     if(json.reponse === '1') {
 
-              $("#getcontent").load("<?php echo base_url("admin/ajouter_valeur") ?>");
+              load("<?php echo base_url("admin/ajouter_valeur") ?>");
               //$.growl.notice({ message: "Votre opération s'est bien effectuée!" });
 
 

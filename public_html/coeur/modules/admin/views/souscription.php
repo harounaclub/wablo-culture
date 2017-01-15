@@ -48,16 +48,16 @@
                                     <div class="form-group">
                                         <div class="fg-line">
 
-                                            <input type="text" class="form-control input-sm" placeholder="Raison Sociale">
+                                            <input type="text" name="nom_societe" class="form-control input-sm" placeholder="Raison Sociale">
 
                                         </div>
                                     </div>
 
-                                    <p class="c-black f-500">Nom & prenom</p>
+                                    <p class="c-black f-500">e-mail</p>
                                     <div class="form-group">
                                         <div class="fg-line">
 
-                                            <input type="text" class="form-control input-sm" placeholder="Nom & prenom">
+                                            <input type="text" name="email" class="form-control input-sm" placeholder="adresse email">
 
                                         </div>
                                     </div>
@@ -66,7 +66,7 @@
                                     <div class="form-group">
                                         <div class="fg-line">
 
-                                            <input type="text" class="form-control input-sm" placeholder="Contact bureau">
+                                            <input type="text" name="phone_bureau" class="form-control input-sm" placeholder="Contact bureau">
 
                                         </div>
 
@@ -75,7 +75,7 @@
                                     <div class="form-group">
                                         <div class="fg-line">
 
-                                            <input type="text" class="form-control input-sm" placeholder="Contact mobile">
+                                            <input type="text" name="phone_mobile" class="form-control input-sm" placeholder="Contact mobile">
 
                                         </div>
                                     </div>
@@ -84,12 +84,7 @@
                                             <div class="form-group">
                                                 <div class="fg-line">
                                                     <div class="select">
-                                                        <select class="form-control">
-                                                            <option>Selectionner le package</option>
-                                                            <option>package 1</option>
-                                                            <option>package 2</option>
-                                                            <option>package 3</option>
-                                                        </select>
+                                                        <?php echo form_dropdown("id_package",$liste_des_packages,"","id='id_package',class='form-control'"); ?>
                                                     </div>
                                                 </div>
                                             </div>
@@ -99,10 +94,10 @@
                                             <div class="form-group">
                                                 <div class="fg-line">
                                                     <div class="select">
-                                                        <select class="form-control">
-                                                            <option>Selectionner le mode de paiement</option>
-                                                            <option>Paiement mobile </option>
-                                                            <option>carte bancaire </option>
+                                                        <select name="id_mode_paiement" class="form-control">
+                                                            <option value="">Selectionner le mode de paiement</option>
+                                                            <option value="1">Paiement mobile </option>
+                                                            <option value="2">carte bancaire </option>
                                                         </select>
                                                     </div>
                                                 </div>
